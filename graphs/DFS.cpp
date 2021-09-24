@@ -10,7 +10,7 @@ class Graph
 public:
 	map<int, bool> visited;
 	map<int, list<int>> adj;
-
+	
 	// function to add an edge to graph
 	void addEdge(int v, int w);
 
@@ -68,21 +68,22 @@ int main()
 {
 	// Create a graph given in the above diagram
 	Graph g;
-	g.addEdge(1, 0);
+	g.addEdge(0, 1);
     g.addEdge(0, 2);
-    g.addEdge(2, 1);
-    g.addEdge(0, 3);
-    g.addEdge(1, 4);
+    g.addEdge(1, 2);
+    g.addEdge(2, 0);
+    g.addEdge(2, 3);
+    g.addEdge(3, 3);
 
 	cout << "Following is Depth First Traversal"
 			" Using Recursive Method"
 			" (starting from vertex 2) \n";
-	g.DFS_Recursive(0);	
+	g.DFS_Recursive(2);	
 	
 	cout << "\nFollowing is Depth First Traversal"
 			" Using Iterative Method"
 			" (starting from vertex 2) \n";	
-	g.DFS_Iterative(0);	
+	g.DFS_Iterative(2);	
 
 	return 0;
 }

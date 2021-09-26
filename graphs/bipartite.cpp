@@ -3,7 +3,7 @@ using namespace std;
 
 class Graph
 {
-    list<int>* adj;
+    vector<int>* adj;
     int V;
 public:
     Graph(int V);
@@ -13,7 +13,7 @@ public:
 
 Graph::Graph(int V){
     this->V = V;
-    adj = new list<int>[V];
+    adj = new vector<int>[V];
 }
 
 void Graph::addEdge(int v, int w){
@@ -31,7 +31,7 @@ bool Graph::isBipartite(){
     queue<int> processing;
     processing.push(0);
     colors[0] = 1;  
-    list<int>::iterator it;  
+    vector<int>::iterator it;  
     while(!processing.empty()){
         int next = processing.front();
         processing.pop();
